@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<VBox alignment="CENTER" styleClass="background" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeamDashboardController" spacing="10">
+    <ImageView fitWidth="540" fitHeight="300">
+        <Image url="@image/banner.png"/>
+    </ImageView>
+    <Separator/>
+    <Label styleClass="heading" fx:id="teamNameLbl"/>
+    <Separator/>
+    <HBox alignment="CENTER" spacing="20">
+        <Label text="Sign a new player: " styleClass="heading"/>
+        <TextField fx:id="signPlayerTf"/>
+        <Button text="Sign" fx:id="signBtn" onAction="#handleSign"/>
+    </HBox>
+    <HBox alignment="CENTER">
+        <TableView prefWidth="300" fx:id="playerTv">
+            <columns>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="149" styleClass="table-cell"/>
+                <TableColumn fx:id="positionCol" text="Position" prefWidth="149" styleClass="table-cell"/>
+            </columns>
+        </TableView>
+
+        <VBox alignment="CENTER" prefWidth="230">
+            <padding>
+                <Insets left="16"/>
+            </padding>
+            <Label text="Active Team" styleClass="activeTeamHeader" alignment="CENTER" prefWidth="270"/>
+
+            <GridPane hgap="20" vgap="20" alignment="CENTER" VBox.vgrow="ALWAYS" fx:id="jerseyGd" styleClass="jerseyImgs">
+
+                <ImageView GridPane.columnIndex="1" GridPane.rowIndex="0" fitWidth="50" preserveRatio="true">
+                    <Image url="@image/none.png"/>
+                </ImageView>
+                <ImageView GridPane.columnIndex="0" GridPane.rowIndex="1" fitWidth="50" preserveRatio="true">
+                    <Image url="@image/none.png"/>
+                </ImageView>
+                <ImageView GridPane.columnIndex="1" GridPane.rowIndex="1" fitWidth="50" preserveRatio="true">
+                    <Image url="@image/none.png"/>
+                </ImageView>
+                <ImageView GridPane.columnIndex="2" GridPane.rowIndex="1" fitWidth="50" preserveRatio="true">
+                    <Image url="@image/none.png"/>
+                </ImageView>
+                <ImageView GridPane.columnIndex="1" GridPane.rowIndex="2" fitWidth="50" preserveRatio="true">
+                    <Image url="@image/none.png"/>
+                </ImageView>
+            </GridPane>
+        </VBox>
+    </HBox>
+    <HBox>
+        <Button text="Unsgin" prefWidth="270" fx:id="unsignBtn" onAction="#handleUnsign"/>
+        <Button text="Close" prefWidth="270" onAction="#handleClose"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<VBox alignment="CENTER" styleClass="background" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerDashboardController" spacing="10">
+    <ImageView fitWidth="540" fitHeight="300">
+        <Image url="@image/banner.png"/>
+    </ImageView>
+    <Separator/>
+    <Label fx:id="nameLbl"/>
+    <Separator/>
+    <ImageView fitWidth="300" fitHeight="300" fx:id="imageView"/>
+    
+    <HBox alignment="CENTER">
+        <Button text="Withdraw" onAction="#handleWithdraw" fx:id="withdrawBtn"/>
+        <Button text="Manage" onAction="#handleManage" fx:id="manageBtn"/>
+    </HBox>
+    <HBox>
+        <Button text="Swap Team" prefWidth="270" onAction="#handleSwapTeam"/>
+        <Button text="Close" prefWidth="270" onAction="#handleClose"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>
